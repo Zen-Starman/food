@@ -24,8 +24,9 @@ $f3->set('DEBUG', 3);
 //you can do GET /home/main/hello/
 $f3->route('GET /', function(){
     //display a view
-    $view = new Template();
-    echo $view->render('views/home.html');
+//    $view = new Template();
+//    echo $view->render('views/home.html');
+    echo "<h1>Breakfast Page</h1>";
 });
 
 //Run Fat-free
