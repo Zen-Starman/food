@@ -5,12 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Food Site</title>
+    <title>Order Summary</title>
 </head>
 <body>
-    <h1>Food is Awesome!</h1>
-    <h2>This is the place for you!</h2>
-    <a href="order"><button href="order" type="submit">Order Food</button></a>
+
+    <h1>Your Order Summary: </h1>
+
+    <h2> You ordered {{ @SESSION.meal }}</h2>
+
 
 </body>
 </html>

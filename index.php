@@ -1,5 +1,8 @@
 <?php
 
+
+session_start();
+
 /**
  *  Practice Routing
  *  Author: Zane Stearman
@@ -14,7 +17,7 @@ error_reporting(E_ALL);
 //Require autoload file
 require_once('vendor/autoload.php');
 
-include('views/head.html');
+//include('views/head.html');
 //Create an instance of the Base class
 $f3 = Base::instance();
 
@@ -53,17 +56,32 @@ $f3->route('GET /lunch/brunch/buffet', function(){
     echo $view->render('views/buffet.html');
 });
 
+
 $f3->route('GET /order', function(){
     $view = new Template();
     echo $view->render('views/form1.html');
 });
 
-$f3->route('POST /order-process', function(){
+//define an order process page
+$f3->route('POST /order2', function(){
 
-    print_r($_POST);
+//    print_r($_POST);
+//    $_SESSION['food'] = $_POST['food'];
 
+    //display form2
     $view = new Template();
     echo $view->render('views/form2.html');
+});
+
+//define another view called summary
+$f3->route('POST /summary', function(){
+
+//    print_r($_POST);
+
+    $_SESSION['meal'] = $_POST['meal'];
+
+    $view = new Template();
+    echo $view->render('views/summary.html');
 });
 
 //Define a route with a parameter
@@ -109,10 +127,5 @@ $f3->route('GET /@first/@last', function($f3, $param)
    echo "<h3>Hello, $first $last!</h3>";
 });
 
-$f3->route('GET /order', function()
-{
-    $view = new Template();
-    echo $view->render('views/order.html');
-});
 //Run Fat-free
 $f3->run(); // ->called the object operator

@@ -5,10 +5,32 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Meal</title>
 </head>
 <body>
+<!--    <header>-->
+<!--        <h1>Order Confirmation: </h1>-->
+<!--    </header>-->
+<!--    <hr>-->
+    <form action="summary" method="post">
+        <label>
+            Which meal?
+            <select name="meal">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+            <button type="submit">Place Order</button>
+        </label>
+    </form>
 
+    <!--
+    because we are running this as a template through the fat-free
+    index.php we do not need require php wrap tags.
+    -->
+<!--    <h2> You ordered {{ $_SESSION['food'] }}</h2>   -->
 
+    <!--This is a shorthand way of writing below-->
+<!--    <h2> You ordered {{ @SESSION.food }}</h2>-->
 </body>
 </html>
